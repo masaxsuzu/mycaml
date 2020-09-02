@@ -1,0 +1,2 @@
+[commit]
+	template = ./etc/.commit_template
