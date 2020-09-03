@@ -1,4 +1,19 @@
 #!/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+red() {
+  x=$1
+  echo "${RED}${x}${NC}"
+}
+
+green() {
+  x=$1
+  echo "${GREEN}${x}${NC}"
+}
+
 assert() {
   expected="$1"
   input="$2"
@@ -9,9 +24,9 @@ assert() {
   actual="$?"
 
   if [ "$actual" = "$expected" ]; then
-    echo "$input => $actual"
+    echo -e "$(green OK) $input => $actual"
   else
-    echo "$input => $expected expected, but got $actual"
+    echo -e "$(red   NG) $input => $expected expected, but got $actual"
     exit 1
   fi
 }
@@ -22,4 +37,4 @@ assert 2 1+1
 assert 0 0
 assert 42 42
 
-echo OK
+echo -e $(green "All OK")
