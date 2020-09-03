@@ -10,6 +10,7 @@
 *.tmp
 tmp.*
 src/yacc_*.ml
+src/yacc_*.mli
 
 # ocamlbuild working directory
 _build/
