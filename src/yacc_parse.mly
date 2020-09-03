@@ -1,7 +1,7 @@
-/* 宣言 + 任意のOCaml コード*/
 %{
-    (* 任意のOCaml コード *)
+    (* Any OCaml Code *)
 %}
+
 %token <int> NUM
 %token PLUS MINUS EOF
 
