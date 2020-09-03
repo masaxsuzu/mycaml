@@ -1,0 +1,14 @@
+name: linux
+
+on:
+    push:
+      branches: 
+          - master
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Format
+      run: echo fmt
