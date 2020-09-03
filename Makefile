@@ -1,3 +1,5 @@
+all: fmt test
+
 mycaml: src/*.mly src/*.mll src/*.ml
 	make -C src mycaml
 	mv src/mycaml mycaml
@@ -15,4 +17,4 @@ init:
 	cp ./etc/config ./.git/config
 	opam install ocamlformat
 
-.PHONEY: test clean init fmt
+.PHONEY: test clean init fmt 

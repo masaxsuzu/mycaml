@@ -5,4 +5,4 @@ type token =
   | EOF
 
 val program :
-  (Lexing.lexbuf  -> token) -> Lexing.lexbuf -> int
+  (Lexing.lexbuf  -> token) -> Lexing.lexbuf -> Ast.node

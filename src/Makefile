@@ -1,7 +1,7 @@
 
 mycaml: yacc_lex.ml yacc_parse.ml yacc_parse.mli *.ml
-	@ocamlc -c yacc_parse.mli yacc_parse.ml yacc_lex.ml main.ml
-	@ocamlc yacc_parse.cmo yacc_lex.cmo main.cmo -o mycaml
+	@ocamlc -c ast.ml yacc_parse.mli yacc_parse.ml yacc_lex.ml main.ml
+	@ocamlc ast.ml yacc_parse.cmo yacc_lex.cmo main.cmo -o mycaml
 
 yacc_lex.ml: yacc_lex.mll
 	@ocamllex  yacc_lex.mll
