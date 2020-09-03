@@ -5,10 +5,13 @@ mycaml: src/*.mly src/*.mll src/*.ml
 test: mycaml
 	@bash ./test.sh
 
+fmt:
+	ocamlformat -i src/*ml
+
 clean:
 	rm src/*.cmo src/*.cmi mycaml tmp.* *.tmp
 
 init:
 	cp ./etc/config ./.git/config
 
-.PHONEY: clean init test
+.PHONEY: test clean init fmt
