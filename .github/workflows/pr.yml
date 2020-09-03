@@ -11,23 +11,23 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - macos-latest
           - ubuntu-latest
-          - windows-latest
         ocaml-version:
-          - 4.10.0
-          - 4.09.1
-          - 4.08.1
+          - 4.05.0
       
     runs-on: ${{ matrix.os }}      
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v2
-  
-        - name: Use OCaml ${{ matrix.ocaml-version }}
-          uses: avsm/setup-ocaml@v1
-          with:
-            ocaml-version: ${{ matrix.ocaml-version }}
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-        - name: Format
-          run: make fmt && test -n "$(git status --short)" && exit 1
+      - name: Use OCaml ${{ matrix.ocaml-version }}
+        uses: avsm/setup-ocaml@v1
+        with:
+          ocaml-version: ${{ matrix.ocaml-version }}
+
+      - name: Build
+        run: make mycaml
+
+      - name: Test
+        run: make test
