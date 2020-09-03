@@ -1,5 +1,6 @@
-mycaml: src/*.ml
-	@ocamlc src/main.ml -o mycaml
+mycaml: src/*.mly src/*.mll src/*.ml
+	make -C src mycaml
+	mv src/mycaml mycaml
 
 test: mycaml
 	@bash ./test.sh

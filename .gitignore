@@ -9,6 +9,7 @@
 *.cmxa
 *.tmp
 tmp.*
+src/yacc_*.ml
 
 # ocamlbuild working directory
 _build/

@@ -16,6 +16,9 @@ assert() {
   fi
 }
 
+assert 0 1-1
+assert 2 1+1
+
 assert 0 0
 assert 42 42
 
