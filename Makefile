@@ -13,5 +13,6 @@ clean:
 
 init:
 	cp ./etc/config ./.git/config
+	opam install ocamlformat
 
 .PHONEY: test clean init fmt

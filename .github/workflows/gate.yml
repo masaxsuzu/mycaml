@@ -1,7 +1,7 @@
-name: Pull Request
+name: Gate
 
 on:
-  pull_request:
+  push:
     branches: 
       - trunk
 
@@ -16,7 +16,6 @@ jobs:
           - 4.05.0
       
     runs-on: ${{ matrix.os }}      
-    
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -25,7 +24,7 @@ jobs:
         uses: avsm/setup-ocaml@v1
         with:
           ocaml-version: ${{ matrix.ocaml-version }}
-
+      
       - name: Build
         run: make mycaml
 
