@@ -31,6 +31,8 @@ assert() {
   fi
 }
 
+assert 21 42/2
+assert 42 21*2
 assert 0 1-1
 assert 2 1+1
 
