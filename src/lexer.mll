@@ -1,6 +1,6 @@
 {
     open Lexing
-    open Yacc_parse
+    open Parser
 }
 
 let digit = ['0'-'9']

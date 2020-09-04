@@ -1,8 +1,8 @@
 open Printf
 open Sys
 open Lexing
-open Yacc_lex
-open Yacc_parse
+open Lexer
+open Parser
 open Ast
 
 let rec gen ast =

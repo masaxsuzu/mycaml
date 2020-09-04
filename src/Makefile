@@ -1,12 +1,12 @@
 
-mycaml: yacc_lex.ml yacc_parse.ml yacc_parse.mli *.ml
-	@ocamlc -c ast.ml yacc_parse.mli yacc_parse.ml yacc_lex.ml main.ml
-	@ocamlc ast.ml yacc_parse.cmo yacc_lex.cmo main.cmo -o mycaml
+mycaml: lexer.ml parser.ml parser.mli *.ml
+	@ocamlc -c ast.ml parser.mli parser.ml lexer.ml main.ml
+	@ocamlc ast.ml parser.cmo lexer.cmo main.cmo -o mycaml
 
-yacc_lex.ml: yacc_lex.mll
-	@ocamllex  yacc_lex.mll
+lexer.ml: lexer.mll
+	@ocamllex  lexer.mll
 
-yacc_parse.ml: yacc_parse.mly
-	@ocamlyacc yacc_parse.mly
+parser.ml: parser.mly
+	@ocamlyacc parser.mly
 
-yacc_parse.mli: yacc_parse.ml
+parser.mli: parser.ml
