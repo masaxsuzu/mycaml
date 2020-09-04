@@ -14,7 +14,12 @@ clean:
 	make -C src $@
 	rm mycaml tmp.* *.tmp -f
 
-init:
-	opam install ocamlformat
+dev:
+	gcc --version
+	opam --version
+	opam show merlin -f version
+	opam show ocaml-system -f version
+	opam show ocamlformat -f version
+	opam show user-setup -f version
 
-.PHONEY: test clean init fmt 
+.PHONEY: test fmt clean dev
