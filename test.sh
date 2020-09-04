@@ -31,11 +31,19 @@ assert() {
   fi
 }
 
+echo "Arithmetic operations"
+assert 100 "(99+1)"
+assert 100 "(101-1)"
+assert 21 "(3*7)"
+assert 17 "(34/2)"
+assert 19 "2+34/2"
+assert 18 "(2+34)/2"
+assert 18 "(2+(34))/2"
+assert 18 "((2+(34)))/2"
 assert 21 42/2
 assert 42 21*2
 assert 0 1-1
 assert 2 1+1
-
 assert 0 0
 assert 42 42
 
